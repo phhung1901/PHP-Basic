@@ -207,3 +207,22 @@ và là toàn cục.
     // để truy cập ta dùng $person[][]
 ?>
 ```
+### PHP Operators (Toán tử)
+* Toán tử được sử dụng để thực hiện các hoạt động dựa trên các biến và giá trị. 
+* Toán tử trong PHP được chia thành các nhóm : 
+  * Toán tử số học: 
+  ![](./img/ttsohoc.png)
+  * Toán tử chuyển nhượng: 
+  ![](./img/ttchuynhuong.png)
+  * Toán tử so sánh: 
+  ![](./img/ttsosanh.png)
+  * Toán tử tăng giảm: 
+  ![](./img/tttanggiam.png)
+  * Toán tử logic: 
+  ![](./img/ttlogic.png)
+  * Toán tử chuỗi. 
+  * Toán tử mảng.
+  * Toán tử chuyển nhượng.
+### Control Structures 
+#### if-else statement
+ 
