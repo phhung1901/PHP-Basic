@@ -224,5 +224,317 @@ và là toàn cục.
   * Toán tử mảng.
   * Toán tử chuyển nhượng.
 ### Control Structures 
-#### if-else statement
- 
+#### if-else statement (Câu lệnh điều kiện)
+***if...else***
+* Thực thi mã với 1 điều kiện đúng và 1 điều kiện sai 
+```php
+<?php
+    // cú pháp 
+    if (condition) {
+        code to be executed if condition is true;
+    } else {
+        code to be executed if condition is false;
+    }
+?>
+```
+***if...elseif...else***
+* Thực thi mã với nhiều hơn 2 điều kiện 
+```php
+<?php
+    // cú pháp
+    if (condition) {
+        code to be executed if this condition is true;
+    } elseif (condition) {
+        code to be executed if first condition is false and this condition is true;
+    } else {
+        code to be executed if all conditions are false;
+    }
+?>
+```
+***switch...case***
+* Thực thi chọn một trong nhiều mã 
+```php
+<?php
+    switch (n) {
+      case label1:
+        code to be executed if n=label1;
+        break;
+      case label2:
+        code to be executed if n=label2;
+        break;
+      case label3:
+        code to be executed if n=label3;
+        break;
+        ...
+      default:
+        code to be executed if n is different from all labels;
+    }
+?>
+```
+### PHP Loops (Vòng lặp)
+* Trong PHP ta có các loại vòng lặp sau: 
+  * while
+  * do...while
+  * for
+  * foreach
+#### While Loop
+* Thực thi khối mã miễn là điều kiện đúng 
+```php
+<?php
+    // cú pháp
+    while (condition is true) {
+      code to be executed;
+    }
+?>
+```
+#### Do...While Loop
+* Luôn luôn thực thi khối mã 1 lần, sau đó kiểm tra điều kiện và lặp nếu điều kiện đúng
+```php
+<?php
+    // cú pháp
+    do {
+      code to be executed;
+    } while (condition is true);
+?>
+```
+#### For Loop
+* Vòng lặp thực thi khối mã với số lần xác định
+```php
+<?php
+    // cú pháp
+    for (init counter; test counter; increment counter) {
+        code to be executed for each iteration;
+    }
+    // ví dụ 
+    for ($x = 0; $x <= 10; $x++) {
+        echo $x."<br>";
+    }
+?>
+```
+#### Foreach Loop
+* Vòng lặp chỉ hoạt động trong mảng (array) và lặp qua từng key/value trong mảng.
+```php
+<?php
+    // cú pháp
+    foreach ($array as $value) {
+        code to be executed;
+    }
+    // ví dụ 
+    $arr = [1, 2, 3];
+    foreach ($arr as $item){
+        echo $item."<br>";
+    }
+?>
+```
+### String Functions
+* Phần này tập trung giới thiệu 12 function xử lý chuỗi được coi là sử dụng phổ biến nhất hiện nay.
+
+***strlen($string) - Lấy độ dài chuỗi***
+```php
+<?php
+    $str = "Pham Huy Hung";
+    echo strlen($str);
+    // 13
+?>
+```
+
+***str_word_count($string) - Đếm số từ***
+```php
+<?php
+    $str = "Pham Huy Hung";
+    echo str_word_count($str);
+    // 3
+?>
+```
+
+***strrev($string) - Đảo ngược chuỗi***
+```php
+<?php
+    $str = "Pham Huy Hung";
+    echo strrev($str);
+    // gnuH yuH mahP
+?>
+```
+
+***strpos($str, $text) - Tìm đoạn $text trong chuỗi***
+```php
+<?php
+    $str = "Pham Huy Hung";
+    echo strpos($str, "Hung");
+    // 9
+?>
+```
+
+***str_replace($find, $replace, $string) - Thay thế đoạn văn bản trong chuỗi***
+```php
+<?php
+    $str = "Pham Huy Hung";
+    $str_new = str_replace("Hung", "Hung_rp", $str);
+    echo $str_new;
+    // Pham Huy Hung_rp
+?>
+```
+
+***ucwords($string) - Chuyển chữ cái đầu tiên của mỗi từ thành in hoa***
+
+***strtoupper($string) - Chuyển toàn bộ chuỗi thành chữ in hoa***
+
+***strtolower($string) - Chuyển toàn bộ chuỗi thành chữ in thường***
+
+***str_repeat($string, $repeat) - Lặp lại chuỗi***
+```php
+<?php
+    $str = "Pham Huy Hung";
+    echo  str_repeat($str, 10);
+    // Pham Huy HungPham Huy HungPham Huy HungPham Huy HungPham Huy HungPham Huy HungPham Huy HungPham Huy HungPham Huy HungPham Huy Hung
+?>
+```
+
+***strcmp($string) - So sánh các chuỗi***
+
+***substr($string,start,length) - Hiển thị 1 phần của chuỗi***
+
+***trim($string) - Xóa ký tự ở đầu và cuối của chuỗi***
+
+### Array Functions
+
+***count($array) - Đếm phần tử trong mảng***
+
+***array_values($array) - Đưa về dạng mảng tuần tự***
+```php
+<?php
+    $arr = [
+        "name" => "Hung",
+        "age" => 22
+    ];
+    print_r(array_values($arr));
+    
+    /*
+     Array
+     (
+        [0] => Hung
+        [1] => 22
+     )
+
+     */
+?>
+```
+
+***array_keys($array) - Trả về 1 mảng tuần tự các key của mảng***
+
+***array_pop($array) - Trả về phần tử cuối cùng của mảng***
+
+***array_push($array,$var,$var…) - Thêm 1 hoặc nhiều phần tử vào cuối cùng của mảng***
+
+***array_unshift($array, $var, $var…) - Thêm 1 hoặc nhiều phần tử vào đầu tiên của mảng***
+
+***sort($array) - Sắp xếp mảng theo chiều tăng dần***
+```php
+<?php
+    $arr = [
+        "name" => "Hung",
+        "age" => 22
+    ];
+    sort($arr);
+    print_r($arr);
+    
+    /*
+    Array
+    (
+        [0] => 22
+        [1] => Hung
+    )
+    */
+?>
+```
+
+***array_reverse($array) - Đảo ngược mảng***
+
+***array_merger($array,$array…) - Gộp 2 hoặc nhiều mảng thành 1 mảng***
+```php
+<?php
+    $arr = [
+        "name" => "Hung",
+        "age" => 22
+    ];
+    $arr_2 = [1, 2, 3];
+    print_r(array_merge($arr, $arr_2));
+    
+    /* 
+    Array
+    (
+        [name] => Hung
+        [age] => 22
+        [0] => 1
+        [1] => 2
+        [2] => 3
+    )
+    */
+?>
+```
+
+***array_search($keyword,$array) - Tìm kiếm giá trị của mảng và trả về nếu có***
+
+***array_slice($array,$begin,$lenght) - Lấy ra phần tử theo vị trí bắt đầu và số lượng***
+```php
+<?php
+    $arr = [
+        "name" => "Hung",
+        "age" => 22
+    ];
+    $arr_2 = [1, 2, 3];
+    $arr_new = array_merge($arr, $arr_2);
+    print_r(array_slice($arr_new, 1, 3));
+    
+    /*
+    Array
+    (
+        [age] => 22
+        [0] => 1
+        [1] => 2
+    )
+     */
+?>
+```
+
+***array_unique($array) - Loại bỏ phần tử trùng nhau trong mảng***
+
+***array_key_exists($key,$array) - Kiểm tra $key có tồn tại trong mảng không***
+
+***in_array($value,$array) - Kiểm tra $value có tồn tại trong mảng không***
+
+***is_array($array) - Kiểm tra xem có phải  mảng hay không***
+### File Handling (Thao tác với file)
+#### fopen()
+* Hàm `fopen()` được dùng để mở 1 tệp với 2 tham số, tham số thứ nhất chứa tên tệp và tham số thứ 
+2 cho biết chế độ mà tệp cần được mở: 
+```php
+<?php
+    $file = fopen("file_name.txt", "w");
+?> 
+```
+* Tệp có thể được mở ở bất kỳ chế độ nào sau đây: 
+  * “W” - Mở tệp chỉ để ghi. Nếu tệp không tồn tại thì tệp mới được tạo và nếu tệp đã tồn tại thì nội dung của tệp sẽ bị xóa.
+  * “R” - Tệp chỉ được mở để đọc.
+  * “A” - Tệp chỉ được mở để ghi. Con trỏ tệp trỏ đến cuối tệp. Dữ liệu hiện có trong tệp được giữ nguyên.
+  * “W +” - Mở tệp để đọc và ghi. Nếu tệp không tồn tại thì tệp mới được tạo và nếu tệp đã tồn tại thì nội dung của tệp sẽ bị xóa.
+  * “R +” - Tệp được mở để đọc / ghi.
+  * “A +” - Tệp được mở để ghi / đọc. Con trỏ tệp trỏ đến cuối tệp. Dữ liệu hiện có trong tệp được giữ nguyên. Nếu tệp không có ở đó thì tệp mới sẽ được tạo.
+  * “X” - Tệp mới chỉ được tạo để ghi.
+#### fread()
+* Hàm `fread()` được sử dụng để đọc 1 file đang mở, tham số thứ nhất là tên file cần đọc và tham số thứ 2 chỉ định số byte tối
+đa cần đọc. 
+* Nếu muốn đọc toàn bộ file ta có thể chỉ định tham số thứ 2 bằng kích thước của file (`filesize()`)
+#### fwrite()
+* Hàm `fwrite()` có thể tạo mới hoặc nối văn bản vào tệp đang mở. Đối số truyền vào là tên file, đoạn văn
+bản cần thêm và có thể thêm đối số thứ 3 là độ dài văn bản được ghi chỉ định.
+```php
+<?php
+    $file = fopen("file_name.txt", 'w');
+    $text = "Hello world\n";
+    fwrite($file, $text);
+?> 
+```
+#### fclose()
+* Hàm `fclose()` dùng để đóng tệp. Đối số truyền vào là tên tệp.
+* Cần đóng tất cả các file sau khi làm việc để tránh 1 file đang mở chạy trên máy chủ và chiếm tài nguyên.
